@@ -60,7 +60,7 @@ async def user_interface():
     Main user interface code. Iterates through a program list with the
     left/right buttons"""
     # Hold center button to stop
-    HUB.system.set_stop_button(Button.CENTER)
+    HUB.system.set_stop_button(None) #Button.CENTER)
     # Main loop/interface that allows for selecting and launching programs
     while True:
         buttons = HUB.buttons.pressed()

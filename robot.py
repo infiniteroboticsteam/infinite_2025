@@ -1,13 +1,12 @@
 from pybricks.parameters import Color
 from pybricks.tools import multitask, run_task, wait
 
-from library import set_drivebase
-from text_library import print_drivebase_settings
+from library import set_drivebase, print_drivebase_settings
 #from measurements import left_attach_measurements, push_measurements, right_attach_measurements
 from ui import add_program, user_interface
 
-from run_demo import run1
-from text_example import run2
+from run_demo_drive import run1
+from run_demo_drive_curve import run2
 
 async def main():
     # Import from xbox_teleop the teleop function if you want to use
