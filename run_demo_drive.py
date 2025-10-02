@@ -1,13 +1,13 @@
 from pybricks.parameters import Color
 from pybricks.tools import multitask, run_task, wait
 
-from icon_library import REBEL, display_pulse_icon
+from icon_library import INFINITE, display_pulse_icon
 from music_library import star_wars_opening
 from robot_config import DRIVE_BASE, HUB, CENTER_ATTACHMENT#, LEFT_ATTACHMENT, RIGHT_ATTACHMENT
 
 #this function plays the star wars opening music.
 async def subtask_play_star_wars():
-    await display_pulse_icon(REBEL)
+    await display_pulse_icon(INFINITE) #REBEL)
     # play some music to show off multitasking
     await star_wars_opening()
 
@@ -50,7 +50,7 @@ async def run1():
     await multitask(
         subtask_play_star_wars(),
         subtask_test_drive_base(),
-        subtask_test_center_attachment()
+        #subtask_test_center_attachment()
         )
 
 #################################################
@@ -67,7 +67,7 @@ async def main():
         run1()
     )
 
-run_task(main())
+#run_task(main())
 
 if __name__ == "__main__":
     run_task(main())
