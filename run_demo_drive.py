@@ -1,29 +1,7 @@
 from pybricks.parameters import Color
 from pybricks.tools import multitask, run_task, wait
 
-from icon_library import INFINITE, display_pulse_icon
-from music_library import star_wars_opening
 from robot_config import DRIVE_BASE, HUB, CENTER_ATTACHMENT#, LEFT_ATTACHMENT, RIGHT_ATTACHMENT
-
-#this function plays the star wars opening music.
-async def subtask_play_star_wars():
-    await display_pulse_icon(INFINITE) #REBEL)
-    # play some music to show off multitasking
-    await star_wars_opening()
-
-#this function tests control of center attachment.
-async def subtask_test_center_attachment():
-    # Just a demo to show off the center attachment
-    # for precision control, reset angle at the beginning.
-    # this function set the counter to be 0, 
-    # but not the absolute location (recall the markers on the motor and driving wheel)
-    CENTER_ATTACHMENT.reset_angle(0)
-    for count in range(2):
-        await wait(500)
-        await CENTER_ATTACHMENT.run_angle(300, 360) #speed, angle
-        await wait(500)
-        await CENTER_ATTACHMENT.run_time(300, -360) 
- 
 
 #use this function as a template to define how to drive the base
 async def subtask_test_drive_base():
@@ -47,11 +25,7 @@ async def run1():
     # Turn button yellow; and beep/wait so hands are out of the way
     HUB.light.on(Color.YELLOW)
     await HUB.speaker.beep(500, 400)
-    await multitask(
-        subtask_play_star_wars(),
-        subtask_test_drive_base(),
-        #subtask_test_center_attachment()
-        )
+    await subtask_test_drive_base()
 
 #################################################
 # Do not remove the code below.
@@ -62,9 +36,13 @@ async def run1():
 async def main():
     # Blank,  done to make code multitask
     # Needed due to how the blocks work
+    print("test run")
+    HUB.light.on(Color.YELLOW)
+    await DRIVE_BASE.straight(50) #go straight forward 50 mm
+
     await multitask(
         wait(0),
-        run1()
+        #run1()
     )
 
 #run_task(main())
