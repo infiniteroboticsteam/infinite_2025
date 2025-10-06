@@ -4,7 +4,7 @@ from pybricks.tools import multitask, run_task, wait
 from robot_config import DRIVE_BASE, HUB, CENTER_ATTACHMENT#, LEFT_ATTACHMENT, RIGHT_ATTACHMENT
 
 #use this function as a template to define how to drive the base
-async def subtask_test_drive_base():
+async def RH_Mission():
     # Turn on Gyro, drive forward
     DRIVE_BASE.use_gyro(True) 
     #await DRIVE_BASE.straight(100) #in mm
@@ -18,14 +18,13 @@ async def subtask_test_drive_base():
     #await DRIVE_BASE.straight(-10)
     DRIVE_BASE.use_gyro(False)
 
+#used to combine tasks
 async def run1():
     await wait(0)
     # Just a demo to show off the drivebase as well as music, icons,
     # and multitasking
     # Turn button yellow; and beep/wait so hands are out of the way
-    HUB.light.on(Color.YELLOW)
-    await HUB.speaker.beep(500, 400)
-    await subtask_test_drive_base()
+    await RH_Mission()
 
 #################################################
 # Do not remove the code below.
@@ -36,13 +35,9 @@ async def run1():
 async def main():
     # Blank,  done to make code multitask
     # Needed due to how the blocks work
-    print("test run")
-    HUB.light.on(Color.YELLOW)
-    await DRIVE_BASE.straight(50) #go straight forward 50 mm
-
     await multitask(
         wait(0),
-        #run1()
+        RH_Mission()
     )
 
 #run_task(main())
