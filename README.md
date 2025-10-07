@@ -1,7 +1,7 @@
-# FLL-2025-2026
+# INFINITE ROBOTICS TEAM 2025
 Starter Code for  Pybricks/FLL
 
-Github url: https://github.com/infiniteroboticsteam/FLL-2025-2026
+Github url: https://github.com/infiniteroboticsteam/infinite-2025
 
 # Set up the hub
 * Connect your hub to your computer via cable.
@@ -39,21 +39,20 @@ This is needed otherwise vscode cannot open the venv.
 
 # code structure
 
-1. the parameters for our driving base and sensor ports are in robot_config.py
+1. robot_config.py: defines the parameters for our driving base and sensor ports.
 
-2. Use run_demo.py as an example on how to write the code for a run.
+2. run_demo_*.py: following the numbers to learn how to control drive base, motors and sensors.
 
     A run is defined as a procedure where the driving base with attachments installed starts from a launch area and returns to either a home area or a launch area. 
 
     A run can be programed to complete multiple missions.
-
 3. Steps to write your code for a run.
-    
-    * For each mission, define a function to move the each attachment to complete a mission.
-    * define a function to move the driving base, at approporiate waypoint (based on distance), add movements for attachments.
-    * test the function for a run in your run.
+    * Create a file run_missions_*.py according to your missions. 
+    * For each run to finish multiple missions, define a function to move the each attachment to complete a mission.
+    * Define a function to move the driving base, at approporiate waypoint (based on distance), add movements for attachments.
+    * Run the file to test the function for a run in your run.
 
-4. At the end, we will use robot.py to add all runs to the program so that during the competition we run different runs by pressing buttons on the hub. Remember, laptop/ipad are not allowed in the game.
+4. robot.py & ui.py: We will use robot.py to add all runs to the program so that during the competition we run different runs by pressing buttons on the hub. Remember, laptop/ipad are not allowed in the game.
 
 
 # Use git to upload your code for missions
@@ -62,6 +61,10 @@ TODO
 
 * If you changed the name in launch.json, do not add the json file in your commit.
 
+# Notes
+
+## spike prime and pybricks are based on MicroPython
+MicroPython uses a subset of modules from standard python. Spike prime does not include sys module. so folders may not be useful.
 
 # Credits
 
