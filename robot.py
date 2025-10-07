@@ -2,18 +2,15 @@ from pybricks.parameters import Color
 from pybricks.tools import multitask, run_task, wait
 
 from library import set_drivebase, print_drivebase_settings
-#from measurements import left_attach_measurements, push_measurements, right_attach_measurements
 from ui import add_program, user_interface
 
-from run_demo_drive import run1
-from run_demo_drive_curve import run2
+from run_demo_1_drive_straight_turn import demo_drive_straight_turn
+from run_demo_2_drive_arc import demo_drive_arc
 
 async def main():
     # Import from xbox_teleop the teleop function if you want to use
     # the telop mode and add the telop program
-    # Must be paired at starup or will crash. Disconnect block if not wanted
-    # Note the code is provided disconnected.
-
+    
     # Blank,  done to make code multitask
     # Needed due to how the blocks work
     await multitask(
@@ -31,11 +28,8 @@ async def main():
     # Add the programs (Missons) below they will appear in the order placed
     # Missions will need to be imported, see example missions/utility programs
     # below
-    await add_program(run1, '1', Color.GREEN)
-    #await add_program(push_measurements, 'P', Color.BLUE)
-    #await add_program(left_attach_measurements, 'L', Color.BLUE)
-    #await add_program(right_attach_measurements, 'R', Color.BLUE)
-    await add_program(run2, '2', Color.RED)
+    await add_program(demo_drive_straight_turn, '1', Color.GREEN)
+    await add_program(demo_drive_arc, '2', Color.RED)
     # Launch the user interface
     await user_interface()
 
