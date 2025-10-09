@@ -66,6 +66,16 @@ TODO
 ## spike prime and pybricks are based on MicroPython
 MicroPython uses a subset of modules from standard python. Spike prime does not include sys module. so folders may not be useful.
 
+
+# References
+
+## Gears
+
+See here for introduction to gears: 
+    - [Part 1](https://community.legoeducation.com/blogs/31/64)
+    - [Part 2](https://community.legoeducation.com/blogs/31/70)
+    
+
 # Credits
 
 * The original repo was forked from https://github.com/MonongahelaCryptidCooperative/FLL-2025-2026.
