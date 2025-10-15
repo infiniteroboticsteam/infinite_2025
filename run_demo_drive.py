@@ -20,11 +20,14 @@ async def RH_Mission():
 
 #used to combine tasks
 async def run1():
-    await wait(0)
+    #await wait(0)
     # Just a demo to show off the drivebase as well as music, icons,
     # and multitasking
     # Turn button yellow; and beep/wait so hands are out of the way
-    await RH_Mission()
+    await DRIVE_BASE.straight(100) #go straight forward 50 mm
+    #await DRIVE_BASE.turn(45) #turn right 180 degree
+    #await DRIVE_BASE.straight(500)  #turn left 180 degree
+    #await RH_Mission()
 
 #################################################
 # Do not remove the code below.
@@ -37,7 +40,7 @@ async def main():
     # Needed due to how the blocks work
     await multitask(
         wait(0),
-        RH_Mission()
+        run1()
     )
 
 #run_task(main())
