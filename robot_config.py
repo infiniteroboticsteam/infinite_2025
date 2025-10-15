@@ -5,9 +5,9 @@ from pybricks.robotics import DriveBase
 
 # Initialize variables.
 SPEED = 500
-ACCELERATION = 500
-TURN_SPEED = 300
-TURN_ACCELERATION = 300
+ACCELERATION = 100
+TURN_SPEED = 150
+TURN_ACCELERATION = 150
 
 # Set up the drive base.
 DRIVE_LEFT = Motor(Port.B, Direction.COUNTERCLOCKWISE)
