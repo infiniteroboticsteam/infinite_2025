@@ -58,10 +58,10 @@ class GearSwapMotor(Motor):
         
         
 # Initialize variables.
-SPEED = 500
-ACCELERATION = 100
-TURN_SPEED = 150
-TURN_ACCELERATION = 150
+SPEED = 700
+ACCELERATION = 700
+TURN_SPEED = 700
+TURN_ACCELERATION = 700
 
 # Set up the drive base.
 DRIVE_LEFT = Motor(Port.B, Direction.COUNTERCLOCKWISE)
@@ -84,5 +84,6 @@ CENTER_ATTACHMENT = GearSwapMotor(Port.D, Direction.COUNTERCLOCKWISE)
 #RIGHT_COLOR_SENSOR = ColorSensor(Port.E)
 
 BACK_ATTACHMENT = GearSwapMotor (Port.C,Direction.CLOCKWISE)
+
 # Set up all devices.
 HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
