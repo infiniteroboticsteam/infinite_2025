@@ -6,6 +6,8 @@ from ui import add_program, user_interface
 
 from run_demo_1_drive_straight_turn import demo_drive_straight_turn
 from run_demo_2_drive_arc import demo_drive_arc
+from run_demo_3_center_attachment import demo_center_attachment
+from run_demo_3_center_attachment2 import demo_center_attachment_2
 
 async def main():
     # Import from xbox_teleop the teleop function if you want to use
@@ -30,6 +32,9 @@ async def main():
     # below
     await add_program(demo_drive_straight_turn, '1', Color.GREEN)
     await add_program(demo_drive_arc, '2', Color.RED)
+    await add_program(demo_center_attachment, '3', Color.GREEN)
+    await add_program(demo_center_attachment_2, '4', Color.RED)
+    
     # Launch the user interface
     await user_interface()
 
