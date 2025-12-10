@@ -58,10 +58,10 @@ class GearSwapMotor(Motor):
         
         
 # Initialize variables.
-SPEED = 700
-ACCELERATION = 700
-TURN_SPEED = 700
-TURN_ACCELERATION = 700
+SPEED = 500
+ACCELERATION = 100
+TURN_SPEED = 150
+TURN_ACCELERATION = 150
 
 # Set up the drive base.
 DRIVE_LEFT = Motor(Port.B, Direction.COUNTERCLOCKWISE)

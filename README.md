@@ -3,6 +3,9 @@ Starter Code for  Pybricks/FLL
 
 Github url: https://github.com/infiniteroboticsteam/infinite-2025
 
+Our driving base is based on the Nautiq Box: https://www.fllcasts.com/materials/3056-nautiq-lego-education-spike-prime-box-robot
+
+
 # Set up the hub
 * Connect your hub to your computer via cable.
 * GO to https://code.pybricks.com/, click "Install Pybricks Firmware" on the left and follow the intructions to install pybricks firmware on your hub.
@@ -65,6 +68,16 @@ TODO
 
 ## spike prime and pybricks are based on MicroPython
 MicroPython uses a subset of modules from standard python. Spike prime does not include sys module. so folders may not be useful.
+
+
+# References
+
+## Gears
+
+See here for introduction to gears: 
+    - [Part 1](https://community.legoeducation.com/blogs/31/64)
+    - [Part 2](https://community.legoeducation.com/blogs/31/70)
+    
 
 # Credits
 
