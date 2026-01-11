@@ -2,7 +2,7 @@ from pybricks.parameters import Color, Direction
 from pybricks.tools import multitask, run_task, wait
 from library import set_drivebase
 
-from robot_config import DRIVE_BASE, HUB, CENTER_ATTACHMENT,FRONT_ATTACHMENT
+from robot_config import DRIVE_BASE, HUB, CENTER_ATTACHMENT,BACK_ATTACHMENT
 
 DRIVE_BASE.settings(straight_speed=700, straight_acceleration=700)
 
@@ -36,18 +36,18 @@ async def run1():
     #perform heavy lifting
     #await CENTER_ATTACHMENT.run_angle(100, 110)
     await wait(255)
-    await multitask(FRONT_ATTACHMENT.run_angle(799,160), CENTER_ATTACHMENT.run_angle(100, 110))
+    await multitask(BACK_ATTACHMENT.run_angle(799,160), CENTER_ATTACHMENT.run_angle(100, 110))
     #return
     await CENTER_ATTACHMENT.run_angle(70,-120)
     #return 
     #await BACK_ATTACHMENT.run_angle(799,160)
     await DRIVE_BASE.straight(-120)
-    await FRONT_ATTACHMENT.run_angle(500,100)
+    await BACK_ATTACHMENT.run_angle(500,100)
     #await multitask(BACK_ATTACHMENT.run_angle(799,160), CENTER_ATTACHMENT.run_angle(100, 110))
     await DRIVE_BASE.turn(-40)
     await DRIVE_BASE.straight(140)
     await DRIVE_BASE.turn(-10)
-    await FRONT_ATTACHMENT.run_angle(200,-90)
+    await BACK_ATTACHMENT.run_angle(200,-90)
     await DRIVE_BASE.straight(-799)
     
     

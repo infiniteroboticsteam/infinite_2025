@@ -23,11 +23,11 @@ async def run3():
     await DRIVE_BASE.straight(200)
     await DRIVE_BASE.straight(-500)
   
-async def main():
-    await multitask(
-        wait(0),
-        run3()
-    )
-run_task(main())
+#async def main():
+#    await multitask(
+#        wait(0),
+#        run3()
+#    )
+#run_task(main())
 if "__file__" == "__main__":
-    run_task(main())
+    run_task(run3())

@@ -177,7 +177,7 @@ async def main():
 
 
 
-run_task(main())
+#run_task(main())
 
 if "__file__" == "__main__":
-    run_task(main())
+    run_task(run2())

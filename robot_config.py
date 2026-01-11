@@ -83,7 +83,7 @@ CENTER_ATTACHMENT = GearSwapMotor(Port.D, Direction.COUNTERCLOCKWISE)
 #LEFT_COLOR_SENSOR = ColorSensor(Port.A)
 #RIGHT_COLOR_SENSOR = ColorSensor(Port.E)
 
-BACK_ATTACHMENT = GearSwapMotor (Port.C,Direction.CLOCKWISE)
+FRONT_ATTACHMENT = GearSwapMotor (Port.C,Direction.CLOCKWISE)
 
 # Set up all devices.
 HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
