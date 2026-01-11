@@ -1,7 +1,7 @@
 from pybricks.tools import multitask, run_task, wait
 from robot_config import CENTER_ATTACHMENT, DRIVE_BASE, FRONT_ATTACHMENT
 DRIVE_BASE.settings(straight_speed=700, straight_acceleration=700)
-async def subtask_test_center_attachment():
+async def run5():
     DRIVE_BASE.use_gyro(True)
     await DRIVE_BASE.straight(-706.7)
     await DRIVE_BASE.turn(-90)
@@ -26,7 +26,7 @@ async def subtask_test_center_attachment():
 async def main():
     await multitask(
         wait(0),
-        subtask_test_center_attachment()
+        run5()
     )
 run_task(main())
 if "__file__" == "__main__":
