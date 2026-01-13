@@ -30,15 +30,19 @@ class GearSwapMotor(Motor):
         self.direction_x = 1
 
         super().__init__(self.port, self.init_positive_direction)
-
+        print("Motor initialized with positive direction", positive_direction)
 
         #for simplicity, gears should be a list of integers
     def reconfigure(self, positive_direction, gears):
+        print("direction comparison:", self.init_positive_direction == positive_direction)
         if self.init_positive_direction == positive_direction:
-            self.direction_x == 1
+            self.direction_x = 1
         else:
-            self.direction_x == 1
+            self.direction_x = -1
 
+        print("new direction x:", self.direction_x)
+        print("Motor reconifigured with positive direction", positive_direction)
+        print("direction X:", self.direction_x)
         self.gears = gears
         #print("reset gears to ", self.gears)
         self.gear_ratio = calculate_simple_gear_ratio(self.gears)
@@ -49,9 +53,15 @@ class GearSwapMotor(Motor):
                     wait: bool = True, reset_angle=True):
         if reset_angle:
             super().reset_angle()
-            
-        await super().run_angle(speed = speed*self.gear_ratio,
-                          rotation_angle = self.direction_x*rotation_angle*self.gear_ratio,
+        
+        calc_speed = speed*self.gear_ratio
+        calc_angle = self.direction_x*rotation_angle*self.gear_ratio
+
+        print("target angle", rotation_angle, "speed", speed,
+              "direction_x", self.direction_x,
+              ", calculated angle", calc_angle, "and speed", calc_speed  )    
+        await super().run_angle(speed = calc_speed,
+                          rotation_angle = calc_angle,
                           then = then,
                           wait = wait
                           )
@@ -70,6 +80,7 @@ DRIVE_BASE = DriveBase(DRIVE_LEFT, DRIVE_RIGHT, 56, 114)
 
 # set up the attachments, if needed
 #CENTER_ATTACHMENT = Motor(Port.D, Direction.CLOCKWISE)
+print("initializing center attachment")
 CENTER_ATTACHMENT = GearSwapMotor(Port.D, Direction.COUNTERCLOCKWISE)
 
 # default configuration: clockwise, no gears
@@ -82,8 +93,10 @@ CENTER_ATTACHMENT = GearSwapMotor(Port.D, Direction.COUNTERCLOCKWISE)
 #if you need color sensors, uncomment the following lines
 #LEFT_COLOR_SENSOR = ColorSensor(Port.A)
 #RIGHT_COLOR_SENSOR = ColorSensor(Port.E)
-
-BACK_ATTACHMENT = GearSwapMotor (Port.C,Direction.CLOCKWISE)
+print("initializing front attachment")
+FRONT_ATTACHMENT = GearSwapMotor (Port.C,Direction.CLOCKWISE)
 
 # Set up all devices.
 HUB = PrimeHub(top_side=Axis.Z, front_side=Axis.Y)
+#bl = HUB.battery.level()
+#print(f"Battery Level: {level}%") 

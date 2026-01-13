@@ -1,12 +1,14 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Python Debugger: Module",
             "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
-            "args": ["run", "ble","--name","SuperSonic" , "${file}"],
+            "args": ["run", "ble","--name","infinite-1" , "${file}"],
+            //"args": ["run", "ble","--name","SuperSonic" , "${file}"],
         }
     ]
 }
