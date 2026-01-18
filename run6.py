@@ -44,8 +44,6 @@ async def run5():
     await DRIVE_BASE.straight(-300)
     await DRIVE_BASE.turn(45)
     await DRIVE_BASE.straight(768)
-    await CENTER_ATTACHMENT.run_angle(800, -400)
-    await FRONT_ATTACHMENT.run_angle(800, 50)
 
 
 if __name__ == "__main__":
