@@ -40,9 +40,9 @@ class GearSwapMotor(Motor):
         else:
             self.direction_x = -1
 
-        print("new direction x:", self.direction_x)
-        print("Motor reconifigured with positive direction", positive_direction)
-        print("direction X:", self.direction_x)
+        #print("new direction x:", self.direction_x)
+        #print("Motor reconifigured with positive direction", positive_direction)
+        #print("direction X:", self.direction_x)
         self.gears = gears
         #print("reset gears to ", self.gears)
         self.gear_ratio = calculate_simple_gear_ratio(self.gears)
@@ -57,9 +57,9 @@ class GearSwapMotor(Motor):
         calc_speed = speed*self.gear_ratio
         calc_angle = self.direction_x*rotation_angle*self.gear_ratio
 
-        print("target angle", rotation_angle, "speed", speed,
-              "direction_x", self.direction_x,
-              ", calculated angle", calc_angle, "and speed", calc_speed  )    
+        #print("target angle", rotation_angle, "speed", speed,
+        #      "direction_x", self.direction_x,
+        #      ", calculated angle", calc_angle, "and speed", calc_speed  )    
         await super().run_angle(speed = calc_speed,
                           rotation_angle = calc_angle,
                           then = then,

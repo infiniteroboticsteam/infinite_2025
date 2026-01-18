@@ -14,13 +14,14 @@ async def run1():
                                   gears=[12,36])
     # Turn on Gyro, drive forward
     DRIVE_BASE.use_gyro(True) 
-    await DRIVE_BASE.straight(660)
+    await DRIVE_BASE.straight(625)
     #return
-    await DRIVE_BASE.turn(44)
+    await DRIVE_BASE.arc(radius=57,angle=45)
+    #await DRIVE_BASE.turn(44)
     #return
     #slow down for more precision
     #approach for heavy lifting 
-    await DRIVE_BASE.straight(135)
+    await DRIVE_BASE.straight(133)
     #return
     #await DRIVE_BASE.turn(-16)
     #await DRIVE_BASE.straight(125)
@@ -28,7 +29,7 @@ async def run1():
     #await DRIVE_BASE.turn(-35)
     #await DRIVE_BASE.straight(31)
     #return
-    
+    #await drive 
     await wait(100)
     #await BACK_ATTACHMENT.run_angle(799,160)
     await wait(100)
@@ -49,7 +50,7 @@ async def run1():
     await DRIVE_BASE.turn(-10)
     await FRONT_ATTACHMENT.run_angle(200,-90)
     await DRIVE_BASE.straight(-799)
-    
+    # await DRIVE_BASE.stop()
     
 
 if __name__ == "__main__":
