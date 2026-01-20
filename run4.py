@@ -42,7 +42,9 @@ async def run4():
     await DRIVE_BASE.turn(-100)
     await DRIVE_BASE.straight(530)
     
-    DRIVE_BASE.use_gyro(False)
+    #await DRIVE_BASE.stop()
+    DRIVE_BASE.use_gyro(False) 
+
 
 
 

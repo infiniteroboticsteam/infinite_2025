@@ -10,14 +10,15 @@ from pybricks.parameters import Axis, Direction, Port
 
 
 async def run5():
-    await HUB.speaker.beep()
-    await set_drivebase()
-    await wait(1000)
+    #await HUB.speaker.beep()
+    DRIVE_BASE.use_gyro(True) 
+    await wait(100)
     DRIVE_BASE.settings(straight_speed=400, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
-    await DRIVE_BASE.straight(750)
-    await DRIVE_BASE.turn(180)
-    await DRIVE_BASE.straight(-187)
-    await DRIVE_BASE.turn(-98)
+    
+    await DRIVE_BASE.straight(-755)
+    #wait DRIVE_BASE.turn(180)
+    #await DRIVE_BASE.straight(-187)
+    await DRIVE_BASE.turn(-95)
     await wait(1000) 
     CENTER_ATTACHMENT.reset_angle(0)
     FRONT_ATTACHMENT.reset_angle(0) 
@@ -36,16 +37,19 @@ async def run5():
     await DRIVE_BASE.straight(70)
     await multitask(CENTER_ATTACHMENT.run_angle(700, 500),DRIVE_BASE.turn(-11))
     #await CENTER_ATTACHMENT.run_angle(800, 400)
-    await DRIVE_BASE.straight(-100)
-    await DRIVE_BASE.turn(35)
-    await DRIVE_BASE.straight(76)
-    await FRONT_ATTACHMENT.run_angle(800, -100)
-    DRIVE_BASE.settings(straight_speed=600, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
-    await DRIVE_BASE.straight(-300)
-    await DRIVE_BASE.turn(45)
+    #await DRIVE_BASE.straight(-100)
+    #await DRIVE_BASE.turn(35)
+    #await DRIVE_BASE.straight(76)
+    #await FRONT_ATTACHMENT.run_angle(800, -100)
+    DRIVE_BASE.settings(straight_speed=800, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
+    await DRIVE_BASE.straight(-400)
+    await DRIVE_BASE.turn(66)
     await DRIVE_BASE.straight(768)
     await CENTER_ATTACHMENT.run_angle(800, -400)
-    await FRONT_ATTACHMENT.run_angle(800, 50)
+    await FRONT_ATTACHMENT.run_angle(800, -50)
+
+    #await DRIVE_BASE.stop()
+    DRIVE_BASE.use_gyro(False) 
 
 
 if __name__ == "__main__":
