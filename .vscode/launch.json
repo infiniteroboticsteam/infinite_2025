@@ -7,7 +7,9 @@
             "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
+            //"args": ["run", "ble","--name","Max-Pybrick" , "${file}"],
             "args": ["run", "ble","--name","infinite-1" , "${file}"],
+
             //"args": ["run", "ble","--name","SuperSonic" , "${file}"],
         }
     ]
