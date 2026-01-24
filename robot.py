@@ -27,7 +27,7 @@ async def main():
     # You probably can double the default speeds in the robot_config file.
     # Conversely the accelration values pybricks creates tend to be too high
     # If your wheels slip your distances will be off. Lower accelration as needed
-    # in the robot_config file to eliminate wheel slippage. These values will depend on wheel choice, center of gravity of your robot and robot weight.
+    # in the robot_config file to eliminate wheel slipage. These values will depend on wheel choice, center of gravity of your robot and robot weight.
     await set_drivebase()
     # Add the programs (Missons) below they will appear in the order placed
     # Missions will need to be imported, see example missions/utility programs
