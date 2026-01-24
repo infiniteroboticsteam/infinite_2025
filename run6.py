@@ -12,7 +12,7 @@ from pybricks.parameters import Axis, Direction, Port
 async def run6():
     await HUB.speaker.beep()
     DRIVE_BASE.use_gyro(True) 
-    await DRIVE_BASE.turn(25)
+    await DRIVE_BASE.turn(20)
     await DRIVE_BASE.straight(400)
     wait(500)
     await DRIVE_BASE.straight(-300)
