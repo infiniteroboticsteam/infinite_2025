@@ -25,6 +25,7 @@ async def run3():
     await DRIVE_BASE.straight(-60)
     await CENTER_ATTACHMENT.run_angle(500, -75.67416741674167416741674167416741674167416741)
     await DRIVE_BASE.straight(254)
+    await wait(500)
     await DRIVE_BASE.straight(-630)
     #await DRIVE_BASE.stop()
     DRIVE_BASE.use_gyro(False) 
