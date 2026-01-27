@@ -1,4 +1,4 @@
-from pybricks.parameters import Color
+from pybricks.parameters import Color, Stop
 from pybricks.tools import run_task, wait,multitask
 from pybricks.parameters import Axis, Direction, Port
 from robot_config import HUB, CENTER_ATTACHMENT, FRONT_ATTACHMENT, DRIVE_BASE
@@ -6,36 +6,38 @@ from library import set_drivebase
 
 from pybricks.pupdevices import Motor
 from pybricks.parameters import Axis, Direction, Port
-#CENTER_ATTACHMENT = Motor(Port.D, Direction.COUNTERCLOCKWISE, gears=[20,40])
-
 
 async def run5():
+    #need to reconfigure attachments
+    
     #await HUB.speaker.beep()
     DRIVE_BASE.use_gyro(True) 
     await wait(100)
     DRIVE_BASE.settings(straight_speed=400, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
     
-    await DRIVE_BASE.straight(-755)
+    await DRIVE_BASE.straight(-758)
     #wait DRIVE_BASE.turn(180)
     #await DRIVE_BASE.straight(-187)
-    await DRIVE_BASE.turn(-95)
-    await wait(1000) 
+    await DRIVE_BASE.turn(-96)
+    await wait(100) 
     CENTER_ATTACHMENT.reset_angle(0)
     FRONT_ATTACHMENT.reset_angle(0) 
     DRIVE_BASE.settings(straight_speed=100, straight_acceleration=200, turn_rate=200, turn_acceleration=1000)
-    await DRIVE_BASE.straight(137) 
-    await wait(1000) 
+    await DRIVE_BASE.straight(119) 
+    await wait(100) 
     await CENTER_ATTACHMENT.run_angle(800, 300)
-    await FRONT_ATTACHMENT.run_angle(800, 50)
-    await wait(1000)
-    await DRIVE_BASE.straight(-105)
-    DRIVE_BASE.settings(straight_speed=200, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
-    await DRIVE_BASE.turn(43)
-    await CENTER_ATTACHMENT.run_angle(800, -305)
-    await DRIVE_BASE.straight(290)
-    #await DRIVE_BASE.turn(-14)
-    await DRIVE_BASE.straight(70)
-    await multitask(CENTER_ATTACHMENT.run_angle(700, 500),DRIVE_BASE.turn(-11))
+    await FRONT_ATTACHMENT.run_angle(800, 40)
+    await wait(100)
+    await CENTER_ATTACHMENT.run_angle(800, -300)
+    await DRIVE_BASE.turn(-2)
+    await DRIVE_BASE.straight(-110)
+    DRIVE_BASE.settings(straight_speed=600, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
+    await DRIVE_BASE.turn(45)
+    #await CENTER_ATTACHMENT.run_angle(800, -305)
+    await DRIVE_BASE.straight(350)
+    #await DRIVE_BASE.turn(-2)
+    #await DRIVE_BASE.straight(70)
+    await multitask(CENTER_ATTACHMENT.run_angle(500, 490),DRIVE_BASE.turn(-22))
     #await CENTER_ATTACHMENT.run_angle(800, 400)
     #await DRIVE_BASE.straight(-100)
     #await DRIVE_BASE.turn(35)
@@ -43,13 +45,12 @@ async def run5():
     #await FRONT_ATTACHMENT.run_angle(800, -100)
     DRIVE_BASE.settings(straight_speed=800, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
     await DRIVE_BASE.straight(-400)
-    await DRIVE_BASE.turn(66)
-    await DRIVE_BASE.straight(768)
-    await CENTER_ATTACHMENT.run_angle(800, -400)
-    await FRONT_ATTACHMENT.run_angle(800, -50)
-
-    #await DRIVE_BASE.stop()
+    await DRIVE_BASE.turn(55)
+    await DRIVE_BASE.straight(665)
+    await CENTER_ATTACHMENT.run_angle(800, -400, then = Stop.COAST)
+    await FRONT_ATTACHMENT.run_angle(800, -40, then = Stop.COAST)
     DRIVE_BASE.use_gyro(False) 
+
 
 
 if __name__ == "__main__":
