@@ -1,4 +1,4 @@
-from pybricks.parameters import Color, Direction
+from pybricks.parameters import Color, Direction, Stop
 from pybricks.tools import multitask, run_task, wait
 from library import set_drivebase
 
@@ -14,14 +14,14 @@ async def run1():
     CENTER_ATTACHMENT.reconfigure(positive_direction=Direction.COUNTERCLOCKWISE,
                                   gears=[12,36])
     # Turn on Gyro, drive forward
-    await wait(100)
+    await wait(500)
     await DRIVE_BASE.straight(625)
     #return
-    await DRIVE_BASE.turn(42)
+    await DRIVE_BASE.turn(43)
     #return
     #slow down for more precision
     #approach for heavy lifting 
-    await DRIVE_BASE.straight(111)
+    await DRIVE_BASE.straight(130)
     #return
 
     await wait(100)
@@ -29,7 +29,7 @@ async def run1():
     #return
   
     await wait(255)
-    await multitask(FRONT_ATTACHMENT.run_angle(799,160), CENTER_ATTACHMENT.run_angle(100, 110))
+    await multitask(FRONT_ATTACHMENT.run_angle(799,160), CENTER_ATTACHMENT.run_angle(100, 115))
     #return
     await CENTER_ATTACHMENT.run_angle(70,-120)
     #return 
@@ -39,8 +39,8 @@ async def run1():
     
     await DRIVE_BASE.turn(-40)
     await DRIVE_BASE.straight(140)
-    await DRIVE_BASE.turn(-10)
-    await FRONT_ATTACHMENT.run_angle(200,-90)
+    await DRIVE_BASE.turn(-8)
+    await FRONT_ATTACHMENT.run_angle(200,-90, then=Stop.COAST)
     await DRIVE_BASE.straight(-799)
     
     DRIVE_BASE.use_gyro(False) 
