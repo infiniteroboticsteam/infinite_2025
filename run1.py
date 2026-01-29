@@ -13,34 +13,30 @@ async def run1():
     await set_drivebase()
     CENTER_ATTACHMENT.reconfigure(positive_direction=Direction.COUNTERCLOCKWISE,
                                   gears=[12,36])
+    FRONT_ATTACHMENT.reconfigure(positive_direction=Direction.CLOCKWISE,
+                                  gears=None)
     # Turn on Gyro, drive forward
     await wait(500)
-    await DRIVE_BASE.straight(625)
+    await DRIVE_BASE.straight(615)
     #return
-    await DRIVE_BASE.turn(43)
+    await DRIVE_BASE.turn(44)
     #return
     #slow down for more precision
     #approach for heavy lifting 
     await DRIVE_BASE.straight(130)
-    #return
-
     await wait(100)
-    
-    #return
-  
-    await wait(255)
-    await multitask(FRONT_ATTACHMENT.run_angle(799,160), CENTER_ATTACHMENT.run_angle(100, 115))
+    await multitask(FRONT_ATTACHMENT.run_angle(799,180), CENTER_ATTACHMENT.run_angle(100, 115))
     #return
     await CENTER_ATTACHMENT.run_angle(70,-120, then=Stop.COAST)
     #return 
     
     await DRIVE_BASE.straight(-120)
-    await FRONT_ATTACHMENT.run_angle(500,100)
+    await FRONT_ATTACHMENT.run_angle(999,90)
     
     await DRIVE_BASE.turn(-40)
     await DRIVE_BASE.straight(140)
-    await DRIVE_BASE.turn(-8)
-    await FRONT_ATTACHMENT.run_angle(200,-90, then=Stop.COAST)
+    await DRIVE_BASE.turn(-7)
+    await FRONT_ATTACHMENT.run_angle(700,-105, then=Stop.COAST)
     await DRIVE_BASE.straight(-799)
     
     DRIVE_BASE.use_gyro(False) 

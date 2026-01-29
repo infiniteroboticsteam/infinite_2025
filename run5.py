@@ -8,6 +8,7 @@ from pybricks.pupdevices import Motor
 from pybricks.parameters import Axis, Direction, Port
 
 async def run5():
+     #await HUB.speaker.beep()
     DRIVE_BASE.use_gyro(True) 
     await wait(100)
     DRIVE_BASE.settings(straight_speed=400, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
@@ -29,12 +30,12 @@ async def run5():
     await DRIVE_BASE.turn(-2)
     await DRIVE_BASE.straight(-115)
     DRIVE_BASE.settings(straight_speed=600, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
-    await DRIVE_BASE.turn(47)
+    await DRIVE_BASE.turn(41)
     #await CENTER_ATTACHMENT.run_angle(800, -305)
     await DRIVE_BASE.straight(347)
     #await DRIVE_BASE.turn(-2)
     #await DRIVE_BASE.straight(70)
-    await multitask(CENTER_ATTACHMENT.run_angle(500, 490),DRIVE_BASE.turn(-19))
+    await multitask(CENTER_ATTACHMENT.run_angle(500, 490),)
     #await CENTER_ATTACHMENT.run_angle(800, 400)
     #await DRIVE_BASE.straight(-100)
     #await DRIVE_BASE.turn(35)
@@ -46,7 +47,10 @@ async def run5():
     await DRIVE_BASE.straight(665)
     await CENTER_ATTACHMENT.run_angle(800, -400)
     await FRONT_ATTACHMENT.run_angle(800, -40)
+
+    #await DRIVE_BASE.stop()
     DRIVE_BASE.use_gyro(False) 
+
 
 
 

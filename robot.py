@@ -35,8 +35,8 @@ async def main():
     await add_program(run1, '1', Color.GREEN)
     await add_program(run2, '2', Color.VIOLET)
     await add_program(run3, '3', Color.YELLOW)
-    await add_program(run4, '4', Color.BLUE)
-    await add_program(run5, '5', Color.ORANGE)
+    await add_program(run5, '4', Color.ORANGE)
+    await add_program(run4, '5', Color.BLUE)
     await add_program(run6, '6', Color.RED)
 
     # Launch the user interface
