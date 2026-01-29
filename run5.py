@@ -8,9 +8,6 @@ from pybricks.pupdevices import Motor
 from pybricks.parameters import Axis, Direction, Port
 
 async def run5():
-    #need to reconfigure attachments
-    
-    #await HUB.speaker.beep()
     DRIVE_BASE.use_gyro(True) 
     await wait(100)
     DRIVE_BASE.settings(straight_speed=400, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
@@ -23,21 +20,21 @@ async def run5():
     CENTER_ATTACHMENT.reset_angle(0)
     FRONT_ATTACHMENT.reset_angle(0) 
     DRIVE_BASE.settings(straight_speed=100, straight_acceleration=200, turn_rate=200, turn_acceleration=1000)
-    await DRIVE_BASE.straight(119) 
+    await DRIVE_BASE.straight(125) 
     await wait(100) 
     await CENTER_ATTACHMENT.run_angle(800, 300)
     await FRONT_ATTACHMENT.run_angle(800, 40)
     await wait(100)
     await CENTER_ATTACHMENT.run_angle(800, -300)
     await DRIVE_BASE.turn(-2)
-    await DRIVE_BASE.straight(-110)
+    await DRIVE_BASE.straight(-115)
     DRIVE_BASE.settings(straight_speed=600, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
-    await DRIVE_BASE.turn(45)
+    await DRIVE_BASE.turn(47)
     #await CENTER_ATTACHMENT.run_angle(800, -305)
-    await DRIVE_BASE.straight(350)
+    await DRIVE_BASE.straight(347)
     #await DRIVE_BASE.turn(-2)
     #await DRIVE_BASE.straight(70)
-    await multitask(CENTER_ATTACHMENT.run_angle(500, 490),DRIVE_BASE.turn(-22))
+    await multitask(CENTER_ATTACHMENT.run_angle(500, 490),DRIVE_BASE.turn(-19))
     #await CENTER_ATTACHMENT.run_angle(800, 400)
     #await DRIVE_BASE.straight(-100)
     #await DRIVE_BASE.turn(35)
@@ -45,10 +42,10 @@ async def run5():
     #await FRONT_ATTACHMENT.run_angle(800, -100)
     DRIVE_BASE.settings(straight_speed=800, straight_acceleration=1000, turn_rate=200, turn_acceleration=1000)
     await DRIVE_BASE.straight(-400)
-    await DRIVE_BASE.turn(55)
+    await DRIVE_BASE.turn(70)
     await DRIVE_BASE.straight(665)
-    await CENTER_ATTACHMENT.run_angle(800, -400, then = Stop.COAST)
-    await FRONT_ATTACHMENT.run_angle(800, -40, then = Stop.COAST)
+    await CENTER_ATTACHMENT.run_angle(800, -400)
+    await FRONT_ATTACHMENT.run_angle(800, -40)
     DRIVE_BASE.use_gyro(False) 
 
 
