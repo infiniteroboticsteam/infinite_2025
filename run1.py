@@ -31,7 +31,7 @@ async def run1():
     await wait(255)
     await multitask(FRONT_ATTACHMENT.run_angle(799,160), CENTER_ATTACHMENT.run_angle(100, 115))
     #return
-    await CENTER_ATTACHMENT.run_angle(70,-120)
+    await CENTER_ATTACHMENT.run_angle(70,-120, then=Stop.COAST)
     #return 
     
     await DRIVE_BASE.straight(-120)

@@ -28,13 +28,14 @@ async def run3():
     await DRIVE_BASE.straight(-170)
     await DRIVE_BASE.turn(90)
 
-    await DRIVE_BASE.straight(100)
-    await CENTER_ATTACHMENT.run_angle(550, -130)
+    await DRIVE_BASE.straight(70)
+
+    await CENTER_ATTACHMENT.run_angle(550, -140)
     await DRIVE_BASE.straight(-65)
-    await CENTER_ATTACHMENT.run_angle(550, 75)
+    await CENTER_ATTACHMENT.run_angle(550, 140,then=Stop.COAST)
     #push ship up and drop flag
     await multitask(DRIVE_BASE.straight(200),
-                    FRONT_ATTACHMENT.run_angle(999,3000)
+                    FRONT_ATTACHMENT.run_angle(999,1000,then=Stop.COAST)
                     )
     #await DRIVE_BASE.straight(200)
     #await FRONT_ATTACHMENT.run_angle(999,3000)
