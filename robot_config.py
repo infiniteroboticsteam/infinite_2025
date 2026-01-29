@@ -9,6 +9,9 @@ def calculate_simple_gear_ratio(gear_teeth_list):
     The list should represent the number of teeth of consecutive gears,
     e.g., [driver_teeth, driven1_teeth, driven2_teeth, ..., final_driven_teeth].
     """
+    if gear_teeth_list is None:
+        return 1.0
+
     if len(gear_teeth_list) < 2:
         raise ValueError("At least two gears are required for a ratio calculation.")
 
