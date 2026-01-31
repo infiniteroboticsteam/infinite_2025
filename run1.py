@@ -19,7 +19,7 @@ async def run1():
     await wait(500)
     await DRIVE_BASE.straight(615)
     #return
-    await DRIVE_BASE.turn(44)
+    await DRIVE_BASE.turn(42)
     #return
     #slow down for more precision
     #approach for heavy lifting 
@@ -32,11 +32,15 @@ async def run1():
     
     await DRIVE_BASE.straight(-120)
     await FRONT_ATTACHMENT.run_angle(999,90)
-    
+    #return
     await DRIVE_BASE.turn(-40)
     await DRIVE_BASE.straight(140)
+    #return
     await DRIVE_BASE.turn(-7)
+    #return
     await FRONT_ATTACHMENT.run_angle(700,-105, then=Stop.COAST)
+    #await DRIVE_BASE.turn(-7)
+    #return
     await DRIVE_BASE.straight(-799)
     
     DRIVE_BASE.use_gyro(False) 

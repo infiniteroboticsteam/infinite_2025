@@ -12,10 +12,11 @@ from pybricks.pupdevices import Motor
 async def run4():
     #await set_drivebase()
     #CENTER_ATTACHMENT = Motor(Port.D, Direction.CLOCKWISE)
-    #CENTER_ATTACHMENT.reconfigure(positive_direction=Direction.COUNTERCLOCKWISE,gears=[12,20])
-    
+    CENTER_ATTACHMENT.reconfigure(positive_direction=Direction.COUNTERCLOCKWISE,gears=None)
+    #CENTER_ATTACHMENT.reconfigure(positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,36])
     # Turn on Gyro
     DRIVE_BASE.use_gyro(True)
+
 
     #await CENTER_ATTACHMENT.run_angle(100,120)
     DRIVE_BASE.settings(straight_speed=700,straight_acceleration=650)
@@ -26,10 +27,14 @@ async def run4():
     await DRIVE_BASE.turn(-90)
     await DRIVE_BASE.straight(30)
     await CENTER_ATTACHMENT.run_angle(150,-120*1.56)
+    await wait(500)
+    await CENTER_ATTACHMENT.run_angle(20,-8*1.56)
+    await wait(500)
     DRIVE_BASE.settings(straight_speed=600,straight_acceleration=650)
     await DRIVE_BASE.straight(-82)
     DRIVE_BASE.settings(straight_speed=360,straight_acceleration=360)
-    await CENTER_ATTACHMENT.run_angle(300,90*1.56)
+    await CENTER_ATTACHMENT.run_angle(500,105*1.57)
+    #return
     await wait(500)
     await DRIVE_BASE.straight(240) # move back
     DRIVE_BASE.settings(straight_speed=250,straight_acceleration=250)
@@ -45,8 +50,8 @@ async def run4():
     DRIVE_BASE.settings(straight_speed=900,straight_acceleration=900)
     await DRIVE_BASE.straight(530)
     #await DRIVE_BASE.stop()
-    
     DRIVE_BASE.use_gyro(False)
+    
 
 
 
